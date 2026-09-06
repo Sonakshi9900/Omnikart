@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Truck, Layers, Headphones, ShieldCheck, Mail, ArrowRight, Sparkles, Github, Twitter, Linkedin, Instagram } from 'lucide-react';
 import { toast } from 'sonner';
-import logoImg from '../../assets/omnikart-logo.png';
+import logoImg from '../../assets/logoDataUrl';
 
 export default function Footer() {
   const [email, setEmail] = useState('');

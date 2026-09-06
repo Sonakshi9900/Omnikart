@@ -4,7 +4,7 @@ import BottomNavBar from './BottomNavBar';
 import Footer from './Footer';
 import CartDrawer from '../customer/CartDrawer';
 import PageTransition from './PageTransition';
-import logoImg from '../../assets/omnikart-logo.png';
+import logoImg from '../../assets/logoDataUrl';
 import { Search, ShoppingBag, User } from 'lucide-react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCartTotalCount, toggleCartSheet } from '../../store/cartSlice';

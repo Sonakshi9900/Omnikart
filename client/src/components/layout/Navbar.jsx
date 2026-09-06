@@ -21,7 +21,7 @@ import { selectCurrentUser, logoutUser } from '../../store/authSlice';
 import { useNavigate, Link } from 'react-router-dom';
 import API from '../../services/api';
 import { toast } from 'sonner';
-import logoImg from '../../assets/omnikart-logo.png';
+import logoImg from '../../assets/logoDataUrl';
 
 const MEGA_MENU_DATA = {
   Electronics: {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
-import logoImg from '../../assets/omnikart-logo.png';
+import logoImg from '../../assets/logoDataUrl';
 
 export default function SplashScreen({ onComplete }) {
   const [isVisible, setIsVisible] = useState(true);
