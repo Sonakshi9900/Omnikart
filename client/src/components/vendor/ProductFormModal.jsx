@@ -90,7 +90,7 @@ export default function ProductFormModal({ isOpen, onClose, onProductCreated }) 
         >
           <div className="flex items-center justify-between border-b border-slate-800 pb-4">
             <div className="flex items-center gap-2">
-              <div className="p-2 rounded-xl bg-indigo-600/20 text-indigo-400">
+              <div className="p-2 rounded-xl bg-brand-blue/20 text-brand-blue-light">
                 <Plus className="w-5 h-5" />
               </div>
               <h2 className="text-lg font-bold text-white">List New Product</h2>
@@ -114,7 +114,7 @@ export default function ProductFormModal({ isOpen, onClose, onProductCreated }) 
                 placeholder="e.g. Wireless Noise-Canceling Headphones"
                 value={formData.title}
                 onChange={handleChange}
-                className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-indigo-500"
+                className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-brand-blue"
               />
             </div>
 
@@ -126,7 +126,7 @@ export default function ProductFormModal({ isOpen, onClose, onProductCreated }) 
                   name="category"
                   value={formData.category}
                   onChange={handleChange}
-                  className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-indigo-500"
+                  className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-brand-blue"
                 >
                   <option value="Electronics">Electronics</option>
                   <option value="Fashion">Fashion</option>
@@ -146,7 +146,7 @@ export default function ProductFormModal({ isOpen, onClose, onProductCreated }) 
                   placeholder="199.99"
                   value={formData.price}
                   onChange={handleChange}
-                  className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-indigo-500"
+                  className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-brand-blue"
                 />
               </div>
 
@@ -160,7 +160,7 @@ export default function ProductFormModal({ isOpen, onClose, onProductCreated }) 
                   placeholder="25"
                   value={formData.stock}
                   onChange={handleChange}
-                  className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-indigo-500"
+                  className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-brand-blue"
                 />
               </div>
             </div>
@@ -177,13 +177,13 @@ export default function ProductFormModal({ isOpen, onClose, onProductCreated }) 
                 onDrop={handleDrop}
                 className={`border-2 border-dashed rounded-2xl p-6 text-center transition-all ${
                   dragActive
-                    ? 'border-indigo-500 bg-indigo-950/30'
+                    ? 'border-brand-blue bg-brand-blue/20'
                     : 'border-slate-800 bg-slate-950/40 hover:border-slate-700'
                 }`}
               >
-                <Upload className="w-8 h-8 text-indigo-400 mx-auto mb-2 animate-bounce" />
+                <Upload className="w-8 h-8 text-brand-blue-light mx-auto mb-2 animate-bounce" />
                 <p className="text-xs text-slate-300 font-medium">
-                  Drag and drop image assets here, or <span className="text-indigo-400 underline cursor-pointer">browse</span>
+                  Drag and drop image assets here, or <span className="text-brand-blue-light underline cursor-pointer">browse</span>
                 </p>
                 <p className="text-[11px] text-slate-500 mt-1">PNG, JPG, WEBP up to 10MB</p>
               </div>
@@ -208,16 +208,16 @@ export default function ProductFormModal({ isOpen, onClose, onProductCreated }) 
                 placeholder="Detail the technical specifications, warranty, and features..."
                 value={formData.description}
                 onChange={handleChange}
-                className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-slate-200 focus:outline-none focus:border-indigo-500"
+                className="w-full mt-1 bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-slate-200 focus:outline-none focus:border-brand-blue"
               />
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm shadow-glow transition-all flex items-center justify-center gap-2"
+              className="w-full py-3 rounded-xl bg-brand-blue hover:bg-brand-blue-light text-white font-bold text-sm shadow-glow transition-all flex items-center justify-center gap-2"
             >
-              <Sparkles className="w-4 h-4" />
+              <Sparkles className="w-4 h-4 text-brand-orange-light" />
               <span>{loading ? 'Publishing...' : 'Publish Product to Storefront'}</span>
             </button>
           </form>

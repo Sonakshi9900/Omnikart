@@ -72,13 +72,13 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#090D16] text-slate-100 flex flex-col">
+    <div className="min-h-screen bg-background text-slate-100 flex flex-col">
       <Header />
 
       <main className="flex-1 flex items-center justify-center p-4">
         <div className="w-full max-w-md glass-panel p-8 rounded-3xl border border-slate-800 space-y-6 shadow-2xl bg-slate-900/90">
           <div className="text-center space-y-2">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 to-purple-600 p-0.5 mx-auto shadow-glow flex items-center justify-center">
+            <div className="w-12 h-12 rounded-2xl bg-brand-gradient p-0.5 mx-auto shadow-glow flex items-center justify-center">
               <Sparkles className="w-6 h-6 text-white" />
             </div>
             <h1 className="text-2xl font-extrabold text-white">
@@ -99,7 +99,7 @@ export default function AuthPage() {
                 onClick={() => setRole('customer')}
                 className={`py-2 text-xs font-semibold rounded-xl flex items-center justify-center gap-1 transition-all ${
                   role === 'customer'
-                    ? 'bg-indigo-600 text-white shadow-sm'
+                    ? 'bg-brand-blue text-white shadow-sm'
                     : 'text-slate-400 hover:text-slate-200'
                 }`}
               >
@@ -112,7 +112,7 @@ export default function AuthPage() {
                 onClick={() => setRole('vendor')}
                 className={`py-2 text-xs font-semibold rounded-xl flex items-center justify-center gap-1 transition-all ${
                   role === 'vendor'
-                    ? 'bg-indigo-600 text-white shadow-sm'
+                    ? 'bg-brand-blue text-white shadow-sm'
                     : 'text-slate-400 hover:text-slate-200'
                 }`}
               >
@@ -125,7 +125,7 @@ export default function AuthPage() {
                 onClick={() => setRole('admin')}
                 className={`py-2 text-xs font-semibold rounded-xl flex items-center justify-center gap-1 transition-all ${
                   role === 'admin'
-                    ? 'bg-purple-600 text-white shadow-sm'
+                    ? 'bg-brand-orange text-white shadow-sm'
                     : 'text-slate-400 hover:text-slate-200'
                 }`}
               >
@@ -148,7 +148,7 @@ export default function AuthPage() {
                     placeholder="Alex Vance"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-indigo-500"
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-brand-blue"
                   />
                 </div>
               </div>
@@ -166,7 +166,7 @@ export default function AuthPage() {
                     placeholder="Aura Sound Labs"
                     value={formData.storeName}
                     onChange={handleChange}
-                    className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-indigo-500"
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-brand-blue"
                   />
                 </div>
               </div>
@@ -183,7 +183,7 @@ export default function AuthPage() {
                   placeholder="alex@omnikart.com"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-indigo-500"
+                  className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-brand-blue"
                 />
               </div>
             </div>
@@ -199,14 +199,14 @@ export default function AuthPage() {
                   placeholder="••••••••"
                   value={formData.password}
                   onChange={handleChange}
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-indigo-500"
+                  className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-brand-blue"
                 />
               </div>
             </div>
 
             <button
               type="submit"
-              className="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm shadow-glow transition-all flex items-center justify-center gap-2"
+              className="w-full py-3 rounded-xl bg-brand-gradient hover:opacity-90 text-white font-bold text-sm shadow-glow transition-all flex items-center justify-center gap-2"
             >
               <span>{isRegister ? `Register as ${role.toUpperCase()}` : 'Sign In'}</span>
               <ArrowRight className="w-4 h-4" />
@@ -216,7 +216,7 @@ export default function AuthPage() {
           <div className="text-center border-t border-slate-800/80 pt-4">
             <button
               onClick={() => setIsRegister(!isRegister)}
-              className="text-xs text-slate-400 hover:text-indigo-400 font-medium transition-colors"
+              className="text-xs text-slate-400 hover:text-brand-blue-light font-medium transition-colors"
             >
               {isRegister
                 ? 'Already have an account? Sign In'

@@ -61,7 +61,7 @@ export default function OrderFulfillmentTable({ orders, onStatusUpdated }) {
           <h3 className="font-bold text-slate-100">Order Fulfillment Queue</h3>
           <p className="text-xs text-slate-400">Manage order statuses and dispatch tracking info</p>
         </div>
-        <span className="text-xs text-indigo-400 font-semibold bg-indigo-950/60 px-3 py-1 rounded-full border border-indigo-900">
+        <span className="text-xs text-brand-blue-light font-semibold bg-brand-blue/20 px-3 py-1 rounded-full border border-brand-blue/40">
           Live Sync Active
         </span>
       </div>
@@ -83,7 +83,7 @@ export default function OrderFulfillmentTable({ orders, onStatusUpdated }) {
               const sub = order.subOrders[0];
               return (
                 <tr key={order._id} className="hover:bg-slate-900/40 transition-colors">
-                  <td className="p-3.5 font-mono text-indigo-400 font-bold">
+                  <td className="p-3.5 font-mono text-brand-blue-light font-bold">
                     #{order._id.slice(-6)}
                   </td>
                   <td className="p-3.5">
@@ -93,17 +93,17 @@ export default function OrderFulfillmentTable({ orders, onStatusUpdated }) {
                       </div>
                     ))}
                   </td>
-                  <td className="p-3.5 font-bold text-emerald-400">
+                  <td className="p-3.5 font-bold text-brand-orange">
                     ${sub?.vendorPayout?.toFixed(2)}
                   </td>
                   <td className="p-3.5">
                     <span
                       className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase ${
                         sub?.status === 'delivered'
-                          ? 'bg-emerald-950 text-emerald-400 border border-emerald-800'
+                          ? 'bg-brand-blue/20 text-brand-blue-light border border-brand-blue/40'
                           : sub?.status === 'shipped'
-                          ? 'bg-indigo-950 text-indigo-400 border border-indigo-800'
-                          : 'bg-amber-950 text-amber-400 border border-amber-800'
+                          ? 'bg-brand-blue/20 text-brand-blue-light border border-brand-blue/40'
+                          : 'bg-brand-orange/20 text-brand-orange-light border border-brand-orange/40'
                       }`}
                     >
                       {sub?.status === 'delivered' ? (
@@ -124,13 +124,13 @@ export default function OrderFulfillmentTable({ orders, onStatusUpdated }) {
                       onChange={(e) =>
                         setTrackingInputs({ ...trackingInputs, [order._id]: e.target.value })
                       }
-                      className="bg-slate-950 border border-slate-800 rounded-lg px-2.5 py-1 text-xs text-slate-200 focus:outline-none focus:border-indigo-500"
+                      className="bg-slate-950 border border-slate-800 rounded-lg px-2.5 py-1 text-xs text-slate-200 focus:outline-none focus:border-brand-blue"
                     />
                   </td>
                   <td className="p-3.5 flex items-center gap-2">
                     <button
                       onClick={() => handleStatusChange(order._id, 'shipped')}
-                      className="px-2.5 py-1 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-[11px] transition-all"
+                      className="px-2.5 py-1 rounded-lg bg-brand-blue hover:bg-brand-blue-light text-white font-semibold text-[11px] transition-all"
                     >
                       Ship Order
                     </button>

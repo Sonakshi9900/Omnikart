@@ -43,7 +43,7 @@ export default function CommissionRateModal({ vendor, onClose, onUpdated }) {
         >
           <div className="flex items-center justify-between border-b border-slate-800 pb-4">
             <div className="flex items-center gap-2">
-              <div className="p-2 rounded-xl bg-purple-600/20 text-purple-400">
+              <div className="p-2 rounded-xl bg-brand-blue/20 text-brand-blue-light">
                 <Percent className="w-5 h-5" />
               </div>
               <div>
@@ -73,7 +73,7 @@ export default function CommissionRateModal({ vendor, onClose, onUpdated }) {
                   required
                   value={rate}
                   onChange={(e) => setRate(e.target.value)}
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-lg font-bold text-indigo-400 focus:outline-none focus:border-indigo-500"
+                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-lg font-bold text-brand-orange-light focus:outline-none focus:border-brand-blue"
                 />
                 <span className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 font-bold">%</span>
               </div>
@@ -84,9 +84,9 @@ export default function CommissionRateModal({ vendor, onClose, onUpdated }) {
 
             <button
               type="submit"
-              className="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-sm shadow-glow transition-all flex items-center justify-center gap-2"
+              className="w-full py-3 rounded-xl bg-brand-blue hover:bg-brand-blue-light text-white font-bold text-sm shadow-glow transition-all flex items-center justify-center gap-2"
             >
-              <Save className="w-4 h-4" />
+              <Save className="w-4 h-4 text-brand-orange-light" />
               <span>Save Rate Override</span>
             </button>
           </form>

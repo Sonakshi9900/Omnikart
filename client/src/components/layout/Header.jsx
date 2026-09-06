@@ -44,7 +44,7 @@ export default function Header({ searchQuery, setSearchQuery }) {
           placeholder="Search products across verified vendors..."
           value={searchQuery || ''}
           onChange={(e) => setSearchQuery && setSearchQuery(e.target.value)}
-          className="w-full bg-slate-900/80 border border-slate-800 rounded-full pl-10 pr-4 py-2 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-indigo-500/80 focus:ring-2 focus:ring-indigo-500/20 transition-all"
+          className="w-full bg-slate-900/80 border border-slate-800 rounded-full pl-10 pr-4 py-2 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 transition-all"
         />
       </div>
 
@@ -52,16 +52,16 @@ export default function Header({ searchQuery, setSearchQuery }) {
       <div className="flex items-center gap-3">
         {user && (
           <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span className="w-2 h-2 rounded-full bg-brand-blue-light animate-pulse"></span>
             <span className="text-slate-400">Role:</span>
-            <span className="font-bold text-indigo-300 uppercase tracking-wider">{user.role}</span>
+            <span className="font-bold text-brand-blue-light uppercase tracking-wider">{user.role}</span>
           </div>
         )}
 
         {user?.role === 'vendor' && (
           <Link
             to="/vendor/dashboard"
-            className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-indigo-950/60 hover:bg-indigo-900/80 border border-indigo-800/60 text-indigo-300 transition-all"
+            className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-brand-blue/20 hover:bg-brand-blue/30 border border-brand-blue/40 text-brand-blue-light transition-all"
           >
             <Store className="w-4 h-4" />
             <span>Vendor SaaS</span>
@@ -71,7 +71,7 @@ export default function Header({ searchQuery, setSearchQuery }) {
         {user?.role === 'admin' && (
           <Link
             to="/admin/dashboard"
-            className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-purple-950/60 hover:bg-purple-900/80 border border-purple-800/60 text-purple-300 transition-all"
+            className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-brand-orange/20 hover:bg-brand-orange/30 border border-brand-orange/40 text-brand-orange-light transition-all"
           >
             <ShieldCheck className="w-4 h-4" />
             <span>Command Center</span>
@@ -84,9 +84,9 @@ export default function Header({ searchQuery, setSearchQuery }) {
           className="relative p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 transition-all"
           title="Shopping Cart"
         >
-          <ShoppingBag className="w-5 h-5 text-indigo-400" />
+          <ShoppingBag className="w-5 h-5 text-brand-orange-light" />
           {cartCount > 0 && (
-            <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-indigo-600 text-white font-extrabold text-[10px] flex items-center justify-center border-2 border-slate-950 shadow-glow">
+            <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-brand-orange text-white font-extrabold text-[10px] flex items-center justify-center border-2 border-slate-950 shadow-glow">
               {cartCount}
             </span>
           )}
@@ -99,7 +99,7 @@ export default function Header({ searchQuery, setSearchQuery }) {
               <img
                 src={user.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'}
                 alt={user.name}
-                className="w-8 h-8 rounded-full border border-indigo-500/50 object-cover"
+                className="w-8 h-8 rounded-full border border-brand-blue-light object-cover"
               />
               <span className="text-xs font-semibold text-slate-200 hidden lg:inline">
                 {user.name}
@@ -116,7 +116,7 @@ export default function Header({ searchQuery, setSearchQuery }) {
         ) : (
           <Link
             to="/auth"
-            className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs shadow-glow transition-all"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand-blue hover:bg-brand-blue-light text-white font-semibold text-xs shadow-glow transition-all"
           >
             <User className="w-4 h-4" />
             <span>Sign In</span>

@@ -33,8 +33,8 @@ export default function AdminDashboardPage() {
             </div>
           </div>
 
-          <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-950/60 border border-purple-800 text-xs font-semibold text-purple-300">
-            <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
+          <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-blue/20 border border-brand-blue/40 text-xs font-semibold text-brand-blue-light">
+            <span className="w-2 h-2 rounded-full bg-brand-blue-light animate-pulse"></span>
             <span>Super Admin Access</span>
           </div>
         </div>
@@ -44,33 +44,33 @@ export default function AdminDashboardPage() {
           <div className="glass-panel p-5 rounded-2xl border border-slate-800 space-y-2">
             <div className="flex items-center justify-between text-xs text-slate-400">
               <span>Platform Gross Volume</span>
-              <div className="p-2 rounded-xl bg-indigo-950/60 text-indigo-400">
+              <div className="p-2 rounded-xl bg-brand-blue/20 text-brand-blue-light">
                 <DollarSign className="w-4 h-4" />
               </div>
             </div>
             <div className="text-2xl font-extrabold text-white">
               ${stats.totalGrossRevenue.toLocaleString()}
             </div>
-            <span className="text-[11px] text-emerald-400 font-medium">All Multi-Vendor Checkout Volume</span>
+            <span className="text-[11px] text-brand-blue-light font-medium">All Multi-Vendor Checkout Volume</span>
           </div>
 
           <div className="glass-panel p-5 rounded-2xl border border-slate-800 space-y-2">
             <div className="flex items-center justify-between text-xs text-slate-400">
               <span>Platform Commission Cut</span>
-              <div className="p-2 rounded-xl bg-purple-950/60 text-purple-400">
+              <div className="p-2 rounded-xl bg-brand-orange/20 text-brand-orange-light">
                 <Percent className="w-4 h-4" />
               </div>
             </div>
-            <div className="text-2xl font-extrabold text-purple-400">
+            <div className="text-2xl font-extrabold text-brand-orange-light">
               ${stats.totalCommissionEarnings.toLocaleString()}
             </div>
-            <span className="text-[11px] text-purple-300 font-medium">Platform Net Margin (10% avg)</span>
+            <span className="text-[11px] text-brand-orange font-medium">Platform Net Margin (10% avg)</span>
           </div>
 
           <div className="glass-panel p-5 rounded-2xl border border-slate-800 space-y-2">
             <div className="flex items-center justify-between text-xs text-slate-400">
               <span>Active Vendor Stores</span>
-              <div className="p-2 rounded-xl bg-cyan-950/60 text-cyan-400">
+              <div className="p-2 rounded-xl bg-brand-blue/20 text-brand-blue-light">
                 <Store className="w-4 h-4" />
               </div>
             </div>
@@ -81,14 +81,14 @@ export default function AdminDashboardPage() {
           <div className="glass-panel p-5 rounded-2xl border border-slate-800 space-y-2">
             <div className="flex items-center justify-between text-xs text-slate-400">
               <span>Pending Vendor Approval</span>
-              <div className="p-2 rounded-xl bg-amber-950/60 text-amber-400">
+              <div className="p-2 rounded-xl bg-brand-orange/20 text-brand-orange-light">
                 <AlertCircle className="w-4 h-4" />
               </div>
             </div>
-            <div className="text-2xl font-extrabold text-amber-400">
+            <div className="text-2xl font-extrabold text-brand-orange-light">
               {stats.pendingVendorApprovals} Applicants
             </div>
-            <span className="text-[11px] text-amber-400 font-medium">Requires Admin Review</span>
+            <span className="text-[11px] text-brand-orange font-medium">Requires Admin Review</span>
           </div>
         </div>
 

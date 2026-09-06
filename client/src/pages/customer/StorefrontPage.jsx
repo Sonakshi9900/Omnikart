@@ -9,7 +9,6 @@ import QuickViewModal from '../../components/customer/QuickViewModal';
 import ProductCard from '../../components/customer/ProductCard';
 import API from '../../services/api';
 import { ShieldCheck, SlidersHorizontal, ArrowRight, Zap, RefreshCw, Lock } from 'lucide-react';
-import { toast } from 'sonner';
 
 const DEFAULT_REAL_PRODUCTS = [
   {
@@ -111,7 +110,6 @@ export default function StorefrontPage() {
   const [showMobileFilter, setShowMobileFilter] = useState(false);
   const [platformStats, setPlatformStats] = useState({ verifiedSellersCount: 12, totalProductsCount: 34 });
 
-  // Fetch Real Products End-to-End from REST API
   useEffect(() => {
     let isMounted = true;
 
@@ -135,7 +133,6 @@ export default function StorefrontPage() {
               totalProductsCount: res.data.total || res.data.products.length,
             }));
           } else {
-            // Client fallback to rich seeded catalog if DB query returned 0 items
             let filtered = [...DEFAULT_REAL_PRODUCTS];
             if (selectedCategory !== 'All') {
               filtered = filtered.filter((p) => p.category === selectedCategory);
@@ -188,12 +185,12 @@ export default function StorefrontPage() {
     >
       <SplashScreen />
 
-      {/* Hero Banner Section with Non-Templated Geometric Dot Pattern */}
-      <section className="relative my-2 md:my-4 overflow-hidden rounded-2xl md:rounded-3xl border border-teal-500/20 bg-slate-900/60 bg-grid-pattern shadow-2xl p-4 sm:p-6 md:p-10">
+      {/* Hero Banner Section with Official Navy Background & Geometric Grid Pattern */}
+      <section className="relative my-2 md:my-4 overflow-hidden rounded-2xl md:rounded-3xl border border-brand-blue/30 bg-surface/80 bg-grid-pattern shadow-2xl p-4 sm:p-6 md:p-10">
         <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-8">
           <div className="space-y-3.5 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-950/80 border border-teal-500/30 text-teal-300 text-[11px] sm:text-xs font-semibold tracking-wide shadow-sm">
-              <ShieldCheck className="w-4 h-4 text-teal-400" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-blue-dark/80 border border-brand-blue/40 text-brand-blue-light text-[11px] sm:text-xs font-semibold tracking-wide shadow-sm">
+              <ShieldCheck className="w-4 h-4 text-brand-orange-light" />
               <span>100% Buyer Protection & Verified Seller Guarantee</span>
             </div>
             
@@ -206,30 +203,30 @@ export default function StorefrontPage() {
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-2 text-[11px] text-slate-400">
-              <span className="flex items-center gap-1">
-                <Zap className="w-3.5 h-3.5 text-amber-400" /> Direct Vendor Payouts
+              <span className="flex items-center gap-1 text-slate-300">
+                <Zap className="w-3.5 h-3.5 text-brand-orange-light" /> Direct Vendor Payouts
               </span>
               <span className="text-slate-700">•</span>
-              <span className="flex items-center gap-1">
-                <RefreshCw className="w-3.5 h-3.5 text-teal-400" /> 7-Day Hassle-Free Returns
+              <span className="flex items-center gap-1 text-slate-300">
+                <RefreshCw className="w-3.5 h-3.5 text-brand-blue-light" /> 7-Day Hassle-Free Returns
               </span>
               <span className="text-slate-700">•</span>
-              <span className="flex items-center gap-1">
-                <Lock className="w-3.5 h-3.5 text-emerald-400" /> Encrypted Checkout
+              <span className="flex items-center gap-1 text-slate-300">
+                <Lock className="w-3.5 h-3.5 text-brand-orange-light" /> Encrypted Checkout
               </span>
             </div>
           </div>
 
           {/* Real Live Metrics Display */}
           <div className="grid grid-cols-2 gap-3 w-full md:w-64 shrink-0">
-            <div className="glass-panel p-3.5 rounded-xl border border-teal-500/20 text-center bg-slate-950/60">
-              <span className="block text-xl sm:text-2xl font-extrabold font-heading text-teal-400">
+            <div className="glass-panel p-3.5 rounded-xl border border-brand-blue/30 text-center bg-card">
+              <span className="block text-xl sm:text-2xl font-extrabold font-heading text-brand-blue-light">
                 {platformStats.verifiedSellersCount}+
               </span>
               <span className="text-[10px] sm:text-xs text-slate-300 font-medium">Verified Stores</span>
             </div>
-            <div className="glass-panel p-3.5 rounded-xl border border-amber-500/20 text-center bg-slate-950/60">
-              <span className="block text-xl sm:text-2xl font-extrabold font-heading text-amber-400">
+            <div className="glass-panel p-3.5 rounded-xl border border-brand-orange/30 text-center bg-card">
+              <span className="block text-xl sm:text-2xl font-extrabold font-heading text-brand-orange-light">
                 {products.length || 6}
               </span>
               <span className="text-[10px] sm:text-xs text-slate-300 font-medium">Active Listings</span>
@@ -244,7 +241,7 @@ export default function StorefrontPage() {
           title="⚡ Flash Deals"
           subtitle="Direct from top-rated verified creators"
           action={
-            <button className="text-[11px] text-teal-400 font-semibold flex items-center gap-1">
+            <button className="text-[11px] text-brand-blue-light font-semibold flex items-center gap-1">
               <span>Explore All</span>
               <ArrowRight className="w-3 h-3" />
             </button>
@@ -280,9 +277,9 @@ export default function StorefrontPage() {
             </span>
             <button
               onClick={() => setShowMobileFilter(!showMobileFilter)}
-              className="min-h-[40px] flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 active:scale-95 transition-all"
+              className="min-h-[40px] flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-card border border-slate-800 text-xs font-semibold text-slate-200 active:scale-95 transition-all"
             >
-              <SlidersHorizontal className="w-3.5 h-3.5 text-teal-400" />
+              <SlidersHorizontal className="w-3.5 h-3.5 text-brand-blue-light" />
               <span>Filters</span>
             </button>
           </div>
@@ -308,7 +305,7 @@ export default function StorefrontPage() {
         </div>
       </section>
 
-      {/* Quick View Modal with Transparent Payout Split & Trust Score */}
+      {/* Quick View Modal */}
       {quickViewProduct && (
         <QuickViewModal
           product={quickViewProduct}

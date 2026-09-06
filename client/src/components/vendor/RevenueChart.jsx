@@ -26,7 +26,7 @@ export default function RevenueChart({ data }) {
           <h3 className="font-bold text-slate-100">Revenue Performance</h3>
           <p className="text-xs text-slate-400">Monthly payout metrics post platform commissions</p>
         </div>
-        <span className="px-3 py-1 text-xs font-bold text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 rounded-full">
+        <span className="px-3 py-1 text-xs font-bold text-brand-blue-light bg-brand-blue/20 border border-brand-blue/40 rounded-full">
           +28.4% YoY
         </span>
       </div>
@@ -36,17 +36,17 @@ export default function RevenueChart({ data }) {
           <AreaChart data={chartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
             <defs>
               <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#6366f1" stopOpacity={0.4} />
-                <stop offset="95%" stopColor="#6366f1" stopOpacity={0} />
+                <stop offset="5%" stopColor="#1D63E0" stopOpacity={0.4} />
+                <stop offset="95%" stopColor="#FF8A00" stopOpacity={0} />
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
+            <CartesianGrid strokeDasharray="3 3" stroke="#16214A" vertical={false} />
             <XAxis dataKey="month" stroke="#64748b" tickLine={false} tick={{ fontSize: 12 }} />
             <YAxis stroke="#64748b" tickLine={false} tick={{ fontSize: 12 }} />
             <Tooltip
               contentStyle={{
-                backgroundColor: '#0f172a',
-                borderColor: '#334155',
+                backgroundColor: '#101B3D',
+                borderColor: '#16214A',
                 borderRadius: '12px',
                 color: '#f8fafc',
                 fontSize: '12px',
@@ -56,7 +56,7 @@ export default function RevenueChart({ data }) {
             <Area
               type="monotone"
               dataKey="revenue"
-              stroke="#6366f1"
+              stroke="#1D63E0"
               strokeWidth={3}
               fillOpacity={1}
               fill="url(#colorRevenue)"

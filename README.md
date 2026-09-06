@@ -39,11 +39,15 @@ On product detail modals and checkout views, buyers see an exact financial break
 
 ## 🎨 Visual Identity & Design System
 
-- **Primary Color Palette**: Electric Emerald (`#059669` / `#10b981`), Amber Gold (`#f59e0b`), on Deep Midnight Obsidian Glass (`#070b14`).
+- **Brand Color Palette**:
+  - **Base Background**: Deep Navy (`#0B1330`), Surface (`#101B3D`), Card (`#16214A`).
+  - **Brand Blue**: Electric Blue (`#1D63E0` DEFAULT, `#2F8CFF` light, `#0B3FA0` dark) matching the logo's "O" wheel.
+  - **Brand Orange**: Vibrant Orange (`#FF8A00` DEFAULT, `#FFB020` light, `#FF6A00` dark) matching the logo's "Kart" gradient.
+  - **CTA Gradient**: Blue-to-Orange transition (`bg-brand-gradient`) for high-conversion CTAs.
 - **Typography System**:
   - **Headings**: `Space Grotesk` (Geometric Futuristic Display)
   - **Body Text**: `Plus Jakarta Sans` (Ultra-legible Sans)
-- **Background Texture**: Geometric Dot Grid pattern (`bg-grid-pattern`) replacing templated gradient blobs.
+- **Background Texture**: Geometric Dot Grid pattern (`bg-grid-pattern`) over deep navy base.
 
 ---
 

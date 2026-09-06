@@ -83,7 +83,7 @@ export default function Navbar({ searchQuery, setSearchQuery }) {
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-[#050811]/90 backdrop-blur-xl border-b border-slate-800/80 transition-all">
+    <header className="sticky top-0 z-40 bg-[#0B1330]/95 backdrop-blur-xl border-b border-slate-800/80 transition-all">
       {/* Top Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 lg:px-8 py-2.5 flex items-center justify-between gap-6">
         {/* Official OmniKart Logo Image */}
@@ -97,16 +97,16 @@ export default function Navbar({ searchQuery, setSearchQuery }) {
 
         {/* Center Prominent Search Bar */}
         <div className="flex-1 max-w-2xl relative hidden md:block">
-          <div className="relative flex items-center bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden focus-within:border-indigo-500 focus-within:ring-2 focus-within:ring-indigo-500/20 transition-all shadow-inner">
+          <div className="relative flex items-center bg-[#101B3D]/90 border border-slate-800 rounded-2xl overflow-hidden focus-within:border-[#1D63E0] focus-within:ring-2 focus-within:ring-[#1D63E0]/20 transition-all shadow-inner">
             <Search className="w-4 h-4 text-slate-400 ml-4 shrink-0" />
             <input
               type="text"
-              placeholder="Search across 120+ verified vendors, brands, categories..."
+              placeholder="Search across verified vendors, brands, categories..."
               value={searchQuery || ''}
               onChange={(e) => setSearchQuery && setSearchQuery(e.target.value)}
               className="w-full bg-transparent px-3 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none"
             />
-            <button className="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition-colors shrink-0 flex items-center gap-1">
+            <button className="px-4 py-2.5 bg-brand-gradient hover:opacity-90 text-white font-semibold text-xs transition-opacity shrink-0 flex items-center gap-1">
               <span>Search</span>
             </button>
           </div>
@@ -117,12 +117,12 @@ export default function Navbar({ searchQuery, setSearchQuery }) {
           {/* Wishlist Icon */}
           <button
             onClick={() => toast.info(`Wishlist has ${wishlistCount} saved items`)}
-            className="relative p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white transition-all"
+            className="relative p-2.5 rounded-xl bg-[#101B3D] hover:bg-[#16214A] border border-slate-800 text-slate-300 hover:text-white transition-all"
             title="Wishlist"
           >
-            <Heart className="w-5 h-5 text-slate-300 hover:text-rose-400 transition-colors" />
+            <Heart className="w-5 h-5 text-brand-orange-light hover:scale-110 transition-transform" />
             {wishlistCount > 0 && (
-              <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-rose-500 text-white font-extrabold text-[10px] flex items-center justify-center border-2 border-[#050811] shadow-glow">
+              <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-brand-orange text-white font-extrabold text-[10px] flex items-center justify-center border-2 border-[#0B1330] shadow-glow">
                 {wishlistCount}
               </span>
             )}
@@ -131,12 +131,12 @@ export default function Navbar({ searchQuery, setSearchQuery }) {
           {/* Cart Trigger */}
           <button
             onClick={() => dispatch(toggleCartSheet())}
-            className="relative p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white transition-all"
+            className="relative p-2.5 rounded-xl bg-[#101B3D] hover:bg-[#16214A] border border-slate-800 text-slate-300 hover:text-white transition-all"
             title="Shopping Cart"
           >
-            <ShoppingBag className="w-5 h-5 text-indigo-400" />
+            <ShoppingBag className="w-5 h-5 text-[#1D63E0]" />
             {cartCount > 0 && (
-              <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-indigo-600 text-white font-extrabold text-[10px] flex items-center justify-center border-2 border-[#050811] shadow-glow animate-bounce">
+              <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-brand-gradient text-white font-extrabold text-[10px] flex items-center justify-center border-2 border-[#0B1330] shadow-glow animate-bounce">
                 {cartCount}
               </span>
             )}
@@ -147,12 +147,12 @@ export default function Navbar({ searchQuery, setSearchQuery }) {
             <div className="relative">
               <button
                 onClick={() => setShowAccountDropdown(!showAccountDropdown)}
-                className="flex items-center gap-2.5 p-1.5 pr-3 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-all"
+                className="flex items-center gap-2.5 p-1.5 pr-3 rounded-2xl bg-[#101B3D] border border-slate-800 hover:border-slate-700 transition-all"
               >
                 <img
                   src={user.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'}
                   alt={user.name}
-                  className="w-8 h-8 rounded-full border border-indigo-500/50 object-cover"
+                  className="w-8 h-8 rounded-full border border-[#1D63E0] object-cover"
                 />
                 <span className="text-xs font-semibold text-slate-200 hidden lg:inline max-w-[100px] truncate">
                   {user.name}
@@ -161,12 +161,12 @@ export default function Navbar({ searchQuery, setSearchQuery }) {
               </button>
 
               {showAccountDropdown && (
-                <div className="absolute right-0 mt-2 w-64 glass-panel bg-slate-900 border border-teal-500/20 rounded-2xl p-2 shadow-2xl z-50 space-y-1 text-xs animate-in fade-in slide-in-from-top-2 duration-200">
+                <div className="absolute right-0 mt-2 w-64 glass-panel bg-[#101B3D] border border-[#1D63E0]/30 rounded-2xl p-2 shadow-2xl z-50 space-y-1 text-xs animate-in fade-in slide-in-from-top-2 duration-200">
                   {/* Logged in User Details Header */}
                   <div className="px-3 py-2 border-b border-slate-800 space-y-0.5">
                     <p className="font-bold font-heading text-white">{user.name}</p>
                     <p className="text-[11px] text-slate-400 truncate">{user.email}</p>
-                    <span className="inline-block mt-1 px-2 py-0.5 rounded bg-teal-950 border border-teal-500/30 text-teal-300 font-bold uppercase text-[9px]">
+                    <span className="inline-block mt-1 px-2 py-0.5 rounded bg-brand-blue-dark/60 border border-brand-blue/30 text-brand-blue-light font-bold uppercase text-[9px]">
                       {user.role}
                     </span>
                   </div>
@@ -178,7 +178,7 @@ export default function Navbar({ searchQuery, setSearchQuery }) {
                       onClick={() => setShowAccountDropdown(false)}
                       className="flex items-center gap-2 px-3 py-2 rounded-xl text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
                     >
-                      <Package className="w-4 h-4 text-teal-400" />
+                      <Package className="w-4 h-4 text-brand-blue-light" />
                       <span>My Orders</span>
                     </Link>
 
@@ -187,7 +187,7 @@ export default function Navbar({ searchQuery, setSearchQuery }) {
                       onClick={() => setShowAccountDropdown(false)}
                       className="flex items-center gap-2 px-3 py-2 rounded-xl text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
                     >
-                      <Heart className="w-4 h-4 text-rose-400" />
+                      <Heart className="w-4 h-4 text-brand-orange" />
                       <span>Wishlist</span>
                     </Link>
 
@@ -196,7 +196,7 @@ export default function Navbar({ searchQuery, setSearchQuery }) {
                       onClick={() => setShowAccountDropdown(false)}
                       className="flex items-center gap-2 px-3 py-2 rounded-xl text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
                     >
-                      <MapPin className="w-4 h-4 text-cyan-400" />
+                      <MapPin className="w-4 h-4 text-brand-blue" />
                       <span>Saved Addresses</span>
                     </Link>
 
@@ -205,7 +205,7 @@ export default function Navbar({ searchQuery, setSearchQuery }) {
                       onClick={() => setShowAccountDropdown(false)}
                       className="flex items-center gap-2 px-3 py-2 rounded-xl text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
                     >
-                      <Settings className="w-4 h-4 text-amber-400" />
+                      <Settings className="w-4 h-4 text-brand-orange-light" />
                       <span>Account Settings</span>
                     </Link>
 
@@ -214,7 +214,7 @@ export default function Navbar({ searchQuery, setSearchQuery }) {
                       onClick={() => setShowAccountDropdown(false)}
                       className="flex items-center gap-2 px-3 py-2 rounded-xl text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
                     >
-                      <CreditCard className="w-4 h-4 text-emerald-400" />
+                      <CreditCard className="w-4 h-4 text-brand-blue-light" />
                       <span>Payment Methods</span>
                     </Link>
                   </div>
@@ -224,9 +224,9 @@ export default function Navbar({ searchQuery, setSearchQuery }) {
                     <Link
                       to="/vendor/dashboard"
                       onClick={() => setShowAccountDropdown(false)}
-                      className="flex items-center gap-2 px-3 py-2 rounded-xl text-teal-300 hover:bg-teal-950/40 font-semibold transition-colors"
+                      className="flex items-center gap-2 px-3 py-2 rounded-xl text-brand-orange-light hover:bg-brand-orange/10 font-semibold transition-colors"
                     >
-                      <Store className="w-4 h-4 text-teal-400" />
+                      <Store className="w-4 h-4 text-brand-orange" />
                       <span>Vendor Dashboard</span>
                     </Link>
                   )}
@@ -235,9 +235,9 @@ export default function Navbar({ searchQuery, setSearchQuery }) {
                     <Link
                       to="/admin/dashboard"
                       onClick={() => setShowAccountDropdown(false)}
-                      className="flex items-center gap-2 px-3 py-2 rounded-xl text-purple-300 hover:bg-purple-950/40 font-semibold transition-colors"
+                      className="flex items-center gap-2 px-3 py-2 rounded-xl text-brand-blue-light hover:bg-brand-blue/10 font-semibold transition-colors"
                     >
-                      <ShieldCheck className="w-4 h-4 text-purple-400" />
+                      <ShieldCheck className="w-4 h-4 text-brand-blue" />
                       <span>Admin Command Center</span>
                     </Link>
                   )}

@@ -12,7 +12,6 @@ export default function ProductCard({ product, onQuickView }) {
   const isLowStock = product.stock > 0 && product.stock <= 5;
   const isOutOfStock = product.stock === 0;
 
-  // Calculate discount percentage if compareAtPrice exists
   const discountPercent =
     product.compareAtPrice && product.compareAtPrice > product.price
       ? Math.round(((product.compareAtPrice - product.price) / product.compareAtPrice) * 100)
@@ -33,23 +32,23 @@ export default function ProductCard({ product, onQuickView }) {
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ scale: 1.02, y: -4 }}
       transition={{ duration: 0.25, ease: 'easeOut' }}
-      className="glass-panel glass-card-hover rounded-2xl md:rounded-3xl p-2.5 sm:p-4 border border-slate-800/80 bg-slate-900/50 flex flex-col justify-between group shadow-lg hover:border-indigo-500/40 relative overflow-hidden"
+      className="glass-panel glass-card-hover rounded-2xl md:rounded-3xl p-2.5 sm:p-4 border border-brand-blue/20 bg-surface/60 flex flex-col justify-between group shadow-lg hover:border-brand-blue/50 relative overflow-hidden"
     >
       <div className="space-y-2 sm:space-y-3">
-        {/* Strict aspect-[4/5] object-cover Image Container across device sizes */}
-        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl md:rounded-2xl bg-slate-950/60 border border-slate-800/60">
+        {/* Aspect 4/5 Image */}
+        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl md:rounded-2xl bg-card border border-slate-800/80">
           <img
             src={product.images[0] || 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600'}
             alt={product.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1330]/80 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity" />
 
-          {/* Glass Badges */}
+          {/* Badges */}
           <div className="absolute top-2 left-2 flex flex-col gap-1 z-10">
             {discountPercent && (
-              <span className="px-2 py-0.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-full backdrop-blur-md">
+              <span className="px-2 py-0.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-brand-orange/20 text-brand-orange-light border border-brand-orange/40 rounded-full backdrop-blur-md">
                 {discountPercent}% OFF
               </span>
             )}
@@ -58,16 +57,16 @@ export default function ProductCard({ product, onQuickView }) {
                 Out of Stock
               </span>
             ) : isLowStock ? (
-              <span className="px-2 py-0.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full backdrop-blur-md">
+              <span className="px-2 py-0.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-brand-orange/20 text-brand-orange-light border border-brand-orange/30 rounded-full backdrop-blur-md">
                 Only {product.stock} Left
               </span>
             ) : null}
           </div>
 
-          {/* Quick View Button (Desktop Hover) */}
+          {/* Quick View Button */}
           <button
             onClick={() => onQuickView && onQuickView(product)}
-            className="absolute top-2 right-2 p-1.5 sm:p-2 rounded-xl bg-slate-950/70 text-slate-300 hover:text-white hover:bg-indigo-600 transition-all opacity-0 group-hover:opacity-100 backdrop-blur-md border border-slate-700/50 hidden sm:flex"
+            className="absolute top-2 right-2 p-1.5 sm:p-2 rounded-xl bg-card/80 text-slate-300 hover:text-white hover:bg-brand-blue transition-all opacity-0 group-hover:opacity-100 backdrop-blur-md border border-slate-700/50 hidden sm:flex"
             title="Quick View"
           >
             <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -77,27 +76,27 @@ export default function ProductCard({ product, onQuickView }) {
         {/* Product Details */}
         <div className="space-y-1 sm:space-y-1.5">
           {/* Vendor Name & Trust Score */}
-          <div className="flex items-center justify-between text-[11px] font-semibold text-teal-400">
+          <div className="flex items-center justify-between text-[11px] font-semibold text-brand-blue-light">
             <div className="flex items-center gap-1 min-w-0">
               <Store className="w-3 h-3 shrink-0" />
               <span className="truncate">{product.vendor?.storeName || 'OmniVendor'}</span>
-              <ShieldCheck className="w-3 h-3 text-emerald-400 shrink-0" title="Verified Seller" />
+              <ShieldCheck className="w-3 h-3 text-brand-blue-light shrink-0" title="Verified Seller" />
             </div>
-            <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-teal-950/80 border border-teal-500/30 text-teal-300 shrink-0">
+            <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-brand-blue-dark/60 border border-brand-blue/30 text-brand-blue-light shrink-0">
               {product.vendor?.trustScore || 98}% Trust
             </span>
           </div>
 
-          {/* Title: 1-line truncation on mobile (`line-clamp-1`), 2-line on desktop (`md:line-clamp-2`) */}
-          <h3 className="font-bold text-slate-100 text-xs sm:text-sm line-clamp-1 md:line-clamp-2 group-hover:text-indigo-300 transition-colors tracking-tight leading-snug">
+          {/* Title */}
+          <h3 className="font-bold text-slate-100 text-xs sm:text-sm line-clamp-1 md:line-clamp-2 group-hover:text-brand-blue-light transition-colors tracking-tight leading-snug font-heading">
             {product.title}
           </h3>
 
           {/* Rating */}
           <div className="flex items-center gap-1 text-[11px] text-slate-300 pt-0.5">
-            <Star className="w-3 h-3 fill-amber-400 text-amber-400 shrink-0" />
+            <Star className="w-3 h-3 fill-brand-orange-light text-brand-orange-light shrink-0" />
             <span className="font-bold">{product.ratingAverage || 4.8}</span>
-            <span className="text-slate-500 text-[10px] hidden sm:inline">({product.ratingCount || 12})</span>
+            <span className="text-slate-400 text-[10px] hidden sm:inline">({product.ratingCount || 12})</span>
           </div>
         </div>
       </div>
@@ -107,7 +106,7 @@ export default function ProductCard({ product, onQuickView }) {
         <div className="min-w-0 flex-1 pr-1">
           <span className="text-[9px] sm:text-[10px] uppercase tracking-wider text-slate-400 font-semibold block">Price</span>
           <div className="flex items-baseline gap-1 sm:gap-1.5 truncate">
-            <span className="text-sm sm:text-base md:text-lg font-extrabold text-white tracking-tight">
+            <span className="text-sm sm:text-base md:text-lg font-extrabold text-white tracking-tight font-heading">
               {formatINR(product.price)}
             </span>
             {product.compareAtPrice && (
@@ -118,12 +117,8 @@ export default function ProductCard({ product, onQuickView }) {
           </div>
         </div>
 
-        {/* Mobile-First Action Buttons:
-            - Mobile: Compact circular '+' button to save space
-            - Desktop: Full "Add" button with icon & text
-        */}
+        {/* Action Buttons: Blue-to-Orange Logo Wheel Gradient */}
         <div className="shrink-0">
-          {/* Mobile '+' Icon Button */}
           <button
             onClick={handleAddToCart}
             disabled={isOutOfStock}
@@ -131,20 +126,19 @@ export default function ProductCard({ product, onQuickView }) {
             className={`md:hidden flex items-center justify-center w-8 h-8 rounded-full text-xs font-bold transition-all min-h-[32px] min-w-[32px] ${
               isOutOfStock
                 ? 'bg-slate-800 text-slate-600 cursor-not-allowed border border-slate-700'
-                : 'bg-indigo-600 active:scale-90 text-white shadow-glow'
+                : 'bg-brand-gradient active:scale-90 text-white shadow-glow'
             }`}
           >
             <Plus className="w-4 h-4 stroke-[2.5]" />
           </button>
 
-          {/* Desktop Full Button */}
           <button
             onClick={handleAddToCart}
             disabled={isOutOfStock}
-            className={`hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all shadow-md ${
+            className={`hidden md:flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all shadow-md ${
               isOutOfStock
                 ? 'bg-slate-800 text-slate-500 cursor-not-allowed border border-slate-700/50'
-                : 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-glow'
+                : 'bg-brand-gradient bg-brand-gradient-hover text-white shadow-glow active:scale-95'
             }`}
           >
             <ShoppingBag className="w-3.5 h-3.5" />

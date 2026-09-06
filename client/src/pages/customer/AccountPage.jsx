@@ -252,15 +252,15 @@ export default function AccountPage() {
     switch (status) {
       case 'shipped':
         return (
-          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-cyan-950/80 text-cyan-300 border border-cyan-500/30 text-[11px] font-bold">
-            <Truck className="w-3.5 h-3.5 text-cyan-400" />
+          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-brand-blue/20 text-brand-blue-light border border-brand-blue/40 text-[11px] font-bold">
+            <Truck className="w-3.5 h-3.5 text-brand-blue-light" />
             Shipped
           </span>
         );
       case 'delivered':
         return (
-          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-950/80 text-emerald-300 border border-emerald-500/30 text-[11px] font-bold">
-            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-brand-blue/20 text-brand-blue-light border border-brand-blue/40 text-[11px] font-bold">
+            <CheckCircle2 className="w-3.5 h-3.5 text-brand-blue-light" />
             Delivered
           </span>
         );
@@ -273,8 +273,8 @@ export default function AccountPage() {
         );
       default:
         return (
-          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-teal-950/80 text-teal-300 border border-teal-500/30 text-[11px] font-bold">
-            <Clock className="w-3.5 h-3.5 text-teal-400" />
+          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-brand-blue/20 text-brand-blue-light border border-brand-blue/40 text-[11px] font-bold">
+            <Clock className="w-3.5 h-3.5 text-brand-blue-light" />
             Order Placed
           </span>
         );
@@ -285,17 +285,17 @@ export default function AccountPage() {
     <MainLayout>
       <div className="space-y-6 my-2 md:my-4">
         {/* Page Header */}
-        <div className="glass-panel p-6 rounded-2xl md:rounded-3xl border border-teal-500/20 bg-slate-900/60 bg-grid-pattern flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div className="glass-panel p-6 rounded-2xl md:rounded-3xl border border-brand-blue/20 bg-card/60 bg-grid-pattern flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <img
               src={user.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'}
               alt={user.name}
-              className="w-14 h-14 rounded-2xl border-2 border-teal-400 object-cover shadow-glow shrink-0"
+              className="w-14 h-14 rounded-2xl border-2 border-brand-blue-light object-cover shadow-glow shrink-0"
             />
             <div>
               <div className="flex items-center gap-2">
                 <h1 className="text-xl sm:text-2xl font-bold font-heading text-white">{user.name}</h1>
-                <span className="px-2.5 py-0.5 rounded bg-teal-950 border border-teal-500/30 text-teal-300 text-[10px] font-bold uppercase tracking-wider">
+                <span className="px-2.5 py-0.5 rounded bg-brand-blue/20 border border-brand-blue/40 text-brand-blue-light text-[10px] font-bold uppercase tracking-wider">
                   {user.role}
                 </span>
               </div>
@@ -307,7 +307,7 @@ export default function AccountPage() {
             {user.role === 'vendor' && (
               <Link
                 to="/vendor/dashboard"
-                className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold shadow-glow transition-all"
+                className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-brand-gradient text-white text-xs font-semibold shadow-glow hover:opacity-90 transition-all"
               >
                 <Store className="w-4 h-4" />
                 <span>Vendor Dashboard</span>
@@ -332,7 +332,7 @@ export default function AccountPage() {
                 onClick={() => setActiveTab('orders')}
                 className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${
                   activeTab === 'orders'
-                    ? 'bg-teal-600 text-white shadow-glow'
+                    ? 'bg-brand-blue text-white shadow-glow'
                     : 'text-slate-300 hover:bg-slate-800/80 hover:text-white'
                 }`}
               >
@@ -349,7 +349,7 @@ export default function AccountPage() {
                 onClick={() => setActiveTab('wishlist')}
                 className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${
                   activeTab === 'wishlist'
-                    ? 'bg-teal-600 text-white shadow-glow'
+                    ? 'bg-brand-blue text-white shadow-glow'
                     : 'text-slate-300 hover:bg-slate-800/80 hover:text-white'
                 }`}
               >
@@ -366,7 +366,7 @@ export default function AccountPage() {
                 onClick={() => setActiveTab('addresses')}
                 className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${
                   activeTab === 'addresses'
-                    ? 'bg-teal-600 text-white shadow-glow'
+                    ? 'bg-brand-blue text-white shadow-glow'
                     : 'text-slate-300 hover:bg-slate-800/80 hover:text-white'
                 }`}
               >
@@ -383,7 +383,7 @@ export default function AccountPage() {
                 onClick={() => setActiveTab('settings')}
                 className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${
                   activeTab === 'settings'
-                    ? 'bg-teal-600 text-white shadow-glow'
+                    ? 'bg-brand-blue text-white shadow-glow'
                     : 'text-slate-300 hover:bg-slate-800/80 hover:text-white'
                 }`}
               >
@@ -398,7 +398,7 @@ export default function AccountPage() {
                 onClick={() => setActiveTab('payments')}
                 className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${
                   activeTab === 'payments'
-                    ? 'bg-teal-600 text-white shadow-glow'
+                    ? 'bg-brand-blue text-white shadow-glow'
                     : 'text-slate-300 hover:bg-slate-800/80 hover:text-white'
                 }`}
               >
@@ -430,7 +430,7 @@ export default function AccountPage() {
                     </p>
                     <Link
                       to="/"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold shadow-glow transition-all"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-blue hover:bg-brand-blue-light text-white text-xs font-semibold shadow-glow transition-all"
                     >
                       <span>Browse Products</span>
                     </Link>
@@ -456,7 +456,7 @@ export default function AccountPage() {
 
                           <div>
                             <span className="text-slate-400 font-semibold uppercase tracking-wider text-[10px] block">Total</span>
-                            <span className="font-bold text-teal-400 text-sm">{formatINR(order.totalAmount)}</span>
+                            <span className="font-bold text-brand-orange text-sm">{formatINR(order.totalAmount)}</span>
                           </div>
 
                           <div>{renderStatusBadge(order.status)}</div>
@@ -478,7 +478,7 @@ export default function AccountPage() {
                                 <div className="min-w-0">
                                   <h4 className="text-xs font-bold text-slate-100 truncate">{item.product.title}</h4>
                                   <div className="flex items-center gap-2 text-[11px] text-slate-400 mt-0.5">
-                                    <span className="text-teal-400 font-semibold flex items-center gap-1">
+                                    <span className="text-brand-blue-light font-semibold flex items-center gap-1">
                                       <Store className="w-3 h-3" />
                                       {item.vendor?.storeName || 'Verified Vendor'}
                                     </span>
@@ -492,7 +492,7 @@ export default function AccountPage() {
 
                               <button
                                 onClick={() => handleReorder(item)}
-                                className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-teal-600 text-slate-200 hover:text-white text-xs font-semibold transition-all shrink-0 min-h-[36px]"
+                                className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-brand-blue text-slate-200 hover:text-white text-xs font-semibold transition-all shrink-0 min-h-[36px]"
                               >
                                 Reorder
                               </button>
@@ -502,9 +502,9 @@ export default function AccountPage() {
 
                         {/* Real-time Logistics Tracking Bar if Shipped */}
                         {order.status === 'shipped' && order.trackingNumber && (
-                          <div className="p-3 rounded-xl bg-cyan-950/30 border border-cyan-500/20 text-xs flex flex-wrap items-center justify-between gap-2">
-                            <div className="flex items-center gap-2 text-cyan-300 font-medium">
-                              <Truck className="w-4 h-4 text-cyan-400" />
+                          <div className="p-3 rounded-xl bg-brand-blue/10 border border-brand-blue/30 text-xs flex flex-wrap items-center justify-between gap-2">
+                            <div className="flex items-center gap-2 text-brand-blue-light font-medium">
+                              <Truck className="w-4 h-4 text-brand-blue-light" />
                               <span>Carrier: {order.carrier} ({order.trackingNumber})</span>
                             </div>
                             <span className="text-slate-400">Est. Delivery: <strong className="text-white">{order.estimatedDelivery}</strong></span>
@@ -534,7 +534,7 @@ export default function AccountPage() {
                     </p>
                     <Link
                       to="/"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold shadow-glow transition-all"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-blue hover:bg-brand-blue-light text-white text-xs font-semibold shadow-glow transition-all"
                     >
                       <span>Explore Catalog</span>
                     </Link>
@@ -553,7 +553,7 @@ export default function AccountPage() {
                             className="w-16 h-16 rounded-xl object-cover border border-slate-800 shrink-0"
                           />
                           <div className="min-w-0 space-y-1">
-                            <span className="text-[10px] font-bold text-teal-400 flex items-center gap-1">
+                            <span className="text-[10px] font-bold text-brand-blue-light flex items-center gap-1">
                               <Store className="w-3 h-3" />
                               {item.vendor?.storeName}
                             </span>
@@ -574,7 +574,7 @@ export default function AccountPage() {
                         <div className="flex items-center gap-2 pt-2 border-t border-slate-800">
                           <button
                             onClick={() => handleMoveToCart(item)}
-                            className="flex-1 py-2 px-3 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold shadow-glow transition-all flex items-center justify-center gap-1.5 min-h-[38px]"
+                            className="flex-1 py-2 px-3 rounded-xl bg-brand-gradient hover:opacity-90 text-white text-xs font-semibold shadow-glow transition-all flex items-center justify-center gap-1.5 min-h-[38px]"
                           >
                             <ShoppingBag className="w-3.5 h-3.5" />
                             <span>Move to Cart</span>
@@ -601,7 +601,7 @@ export default function AccountPage() {
                   <h2 className="text-lg font-bold font-heading text-white">Saved Shipping Addresses</h2>
                   <button
                     onClick={() => setShowAddrModal(true)}
-                    className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold shadow-glow transition-all min-h-[38px]"
+                    className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-brand-blue hover:bg-brand-blue-light text-white text-xs font-semibold shadow-glow transition-all min-h-[38px]"
                   >
                     <Plus className="w-4 h-4" />
                     <span>Add New Address</span>
@@ -613,7 +613,7 @@ export default function AccountPage() {
                     <div
                       key={addr.id}
                       className={`glass-panel p-4 rounded-2xl border ${
-                        addr.isDefault ? 'border-teal-500/50 bg-teal-950/10' : 'border-slate-800 bg-slate-900/50'
+                        addr.isDefault ? 'border-brand-blue/50 bg-brand-blue/10' : 'border-slate-800 bg-slate-900/50'
                       } flex flex-col justify-between space-y-3 relative`}
                     >
                       <div className="space-y-1.5 text-xs">
@@ -624,7 +624,7 @@ export default function AccountPage() {
                               {addr.type}
                             </span>
                             {addr.isDefault && (
-                              <span className="px-2 py-0.5 rounded bg-teal-950 border border-teal-500/40 text-teal-300 font-bold text-[10px]">
+                              <span className="px-2 py-0.5 rounded bg-brand-blue/20 border border-brand-blue/40 text-brand-blue-light font-bold text-[10px]">
                                 DEFAULT
                               </span>
                             )}
@@ -642,7 +642,7 @@ export default function AccountPage() {
                         {!addr.isDefault && (
                           <button
                             onClick={() => handleSetDefaultAddress(addr.id)}
-                            className="text-teal-400 hover:underline font-semibold text-[11px]"
+                            className="text-brand-blue-light hover:underline font-semibold text-[11px]"
                           >
                             Set as Default
                           </button>
@@ -666,7 +666,7 @@ export default function AccountPage() {
                   <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
                     <form
                       onSubmit={handleAddAddress}
-                      className="glass-panel bg-slate-900 border border-teal-500/30 p-6 rounded-3xl w-full max-w-md space-y-4 shadow-2xl"
+                      className="glass-panel bg-slate-900 border border-brand-blue/30 p-6 rounded-3xl w-full max-w-md space-y-4 shadow-2xl"
                     >
                       <div className="flex items-center justify-between pb-2 border-b border-slate-800">
                         <h3 className="font-bold text-white font-heading text-base">Add Shipping Address</h3>
@@ -684,7 +684,7 @@ export default function AccountPage() {
                             placeholder="Recipient's Name"
                             value={newAddr.name}
                             onChange={(e) => setNewAddr({ ...newAddr, name: e.target.value })}
-                            className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:border-teal-500"
+                            className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:border-brand-blue"
                           />
                         </div>
 
@@ -694,7 +694,7 @@ export default function AccountPage() {
                             <select
                               value={newAddr.type}
                               onChange={(e) => setNewAddr({ ...newAddr, type: e.target.value })}
-                              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:border-teal-500"
+                              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:border-brand-blue"
                             >
                               <option value="Home">Home</option>
                               <option value="Work">Work</option>
@@ -709,7 +709,7 @@ export default function AccountPage() {
                               placeholder="+91 98765..."
                               value={newAddr.phone}
                               onChange={(e) => setNewAddr({ ...newAddr, phone: e.target.value })}
-                              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:border-teal-500"
+                              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:border-brand-blue"
                             />
                           </div>
                         </div>
@@ -722,7 +722,7 @@ export default function AccountPage() {
                             placeholder="House / Flat No, Building, Street"
                             value={newAddr.street}
                             onChange={(e) => setNewAddr({ ...newAddr, street: e.target.value })}
-                            className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:border-teal-500"
+                            className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:border-brand-blue"
                           />
                         </div>
 
@@ -735,7 +735,7 @@ export default function AccountPage() {
                               placeholder="City"
                               value={newAddr.city}
                               onChange={(e) => setNewAddr({ ...newAddr, city: e.target.value })}
-                              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:border-teal-500"
+                              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:border-brand-blue"
                             />
                           </div>
                           <div>
@@ -746,7 +746,7 @@ export default function AccountPage() {
                               placeholder="State"
                               value={newAddr.state}
                               onChange={(e) => setNewAddr({ ...newAddr, state: e.target.value })}
-                              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:border-teal-500"
+                              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:border-brand-blue"
                             />
                           </div>
                           <div>
@@ -757,7 +757,7 @@ export default function AccountPage() {
                               placeholder="201301"
                               value={newAddr.pincode}
                               onChange={(e) => setNewAddr({ ...newAddr, pincode: e.target.value })}
-                              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:border-teal-500"
+                              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:border-brand-blue"
                             />
                           </div>
                         </div>
@@ -773,7 +773,7 @@ export default function AccountPage() {
                         </button>
                         <button
                           type="submit"
-                          className="flex-1 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold shadow-glow"
+                          className="flex-1 py-2.5 rounded-xl bg-brand-blue hover:bg-brand-blue-light text-white text-xs font-semibold shadow-glow"
                         >
                           Save Address
                         </button>
@@ -794,7 +794,7 @@ export default function AccountPage() {
                   onSubmit={handleSaveProfile}
                   className="glass-panel p-5 rounded-2xl border border-slate-800/90 bg-slate-900/50 space-y-4"
                 >
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-teal-400 flex items-center gap-2">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-brand-blue-light flex items-center gap-2">
                     <User className="w-4 h-4" />
                     Personal Information
                   </h3>
@@ -806,7 +806,7 @@ export default function AccountPage() {
                         type="text"
                         value={profileForm.name}
                         onChange={(e) => setProfileForm({ ...profileForm, name: e.target.value })}
-                        className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:border-teal-500"
+                        className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:border-brand-blue"
                       />
                     </div>
                     <div>
@@ -815,14 +815,14 @@ export default function AccountPage() {
                         type="email"
                         value={profileForm.email}
                         onChange={(e) => setProfileForm({ ...profileForm, email: e.target.value })}
-                        className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:border-teal-500"
+                        className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:border-brand-blue"
                       />
                     </div>
                   </div>
 
                   <button
                     type="submit"
-                    className="px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold shadow-glow transition-all"
+                    className="px-4 py-2 rounded-xl bg-brand-blue hover:bg-brand-blue-light text-white text-xs font-semibold shadow-glow transition-all"
                   >
                     Save Changes
                   </button>
@@ -830,7 +830,7 @@ export default function AccountPage() {
 
                 {/* Notification Preferences */}
                 <div className="glass-panel p-5 rounded-2xl border border-slate-800/90 bg-slate-900/50 space-y-4">
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-teal-400 flex items-center gap-2">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-brand-blue-light flex items-center gap-2">
                     <Bell className="w-4 h-4" />
                     Notification Preferences
                   </h3>
@@ -845,7 +845,7 @@ export default function AccountPage() {
                         type="checkbox"
                         checked={notifications.orderUpdates}
                         onChange={(e) => setNotifications({ ...notifications, orderUpdates: e.target.checked })}
-                        className="w-4 h-4 accent-teal-500 rounded"
+                        className="w-4 h-4 accent-brand-blue rounded"
                       />
                     </label>
 
@@ -858,7 +858,7 @@ export default function AccountPage() {
                         type="checkbox"
                         checked={notifications.promotions}
                         onChange={(e) => setNotifications({ ...notifications, promotions: e.target.checked })}
-                        className="w-4 h-4 accent-teal-500 rounded"
+                        className="w-4 h-4 accent-brand-blue rounded"
                       />
                     </label>
                   </div>
@@ -873,7 +873,7 @@ export default function AccountPage() {
                   <h2 className="text-lg font-bold font-heading text-white">Saved Payment Methods</h2>
                   <button
                     onClick={() => toast.info('Stripe card management integration active')}
-                    className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold shadow-glow transition-all min-h-[38px]"
+                    className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-brand-blue hover:bg-brand-blue-light text-white text-xs font-semibold shadow-glow transition-all min-h-[38px]"
                   >
                     <Plus className="w-4 h-4" />
                     <span>Add New Card</span>
@@ -887,14 +887,14 @@ export default function AccountPage() {
                       className="glass-panel p-4 rounded-2xl border border-slate-800/90 bg-slate-900/50 flex items-center justify-between gap-4"
                     >
                       <div className="flex items-center gap-3">
-                        <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-teal-400">
+                        <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-brand-blue-light">
                           <CreditCard className="w-5 h-5" />
                         </div>
                         <div>
                           <div className="flex items-center gap-2">
                             <span className="font-bold text-white text-xs">{pm.brand} ending in {pm.last4}</span>
                             {pm.isDefault && (
-                              <span className="px-2 py-0.5 rounded bg-teal-950 border border-teal-500/40 text-teal-300 font-bold text-[9px]">
+                              <span className="px-2 py-0.5 rounded bg-brand-blue/20 border border-brand-blue/40 text-brand-blue-light font-bold text-[9px]">
                                 DEFAULT
                               </span>
                             )}

@@ -30,7 +30,7 @@ export default function SplashScreen({ onComplete }) {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, y: -40 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#050811] text-white"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background text-white"
         >
           <motion.div
             initial={{ scale: 0.85, opacity: 0 }}
@@ -40,18 +40,18 @@ export default function SplashScreen({ onComplete }) {
           >
             {/* Branding Logo Glow */}
             <div className="relative">
-              <div className="p-1 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-purple-500 shadow-glow animate-pulse">
+              <div className="p-1 rounded-2xl bg-brand-gradient shadow-glow animate-pulse">
                 <img
                   src={logoImg}
                   alt="OmniKart Logo"
-                  className="h-20 w-auto object-contain rounded-xl bg-[#050811] p-1"
+                  className="h-20 w-auto object-contain rounded-xl bg-background p-1"
                 />
               </div>
             </div>
 
             {/* Typography */}
             <div className="flex flex-col items-center text-center">
-              <p className="text-xs text-indigo-400 font-semibold tracking-widest uppercase mt-1">
+              <p className="text-xs text-brand-blue-light font-semibold tracking-widest uppercase mt-1">
                 Multi-Source E-Commerce Platform
               </p>
             </div>
@@ -62,7 +62,7 @@ export default function SplashScreen({ onComplete }) {
                 initial={{ x: '-100%' }}
                 animate={{ x: '0%' }}
                 transition={{ duration: 1.5, ease: 'easeInOut' }}
-                className="w-full h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-400"
+                className="w-full h-full bg-brand-gradient"
               />
             </div>
           </motion.div>

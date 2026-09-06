@@ -44,7 +44,7 @@ export default function CartDrawer() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={() => dispatch(toggleCartSheet(false))}
-          className="fixed inset-0 bg-[#050811]/80 backdrop-blur-sm transition-opacity"
+          className="fixed inset-0 bg-background/80 backdrop-blur-sm transition-opacity"
         />
 
         {/* Responsive Sliding Drawer: 100% width on mobile, 400px on desktop */}
@@ -59,7 +59,7 @@ export default function CartDrawer() {
             {/* Header */}
             <div className="p-4 sm:p-5 border-b border-slate-800/80 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="p-2 rounded-xl bg-indigo-600/20 border border-indigo-500/30 text-indigo-400">
+                <div className="p-2 rounded-xl bg-brand-blue/20 border border-brand-blue/30 text-brand-blue-light">
                   <ShoppingBag className="w-5 h-5" />
                 </div>
                 <div>
@@ -103,7 +103,7 @@ export default function CartDrawer() {
               ) : (
                 Object.entries(itemsByVendor).map(([vendorName, vendorItems]) => (
                   <div key={vendorName} className="space-y-3 bg-slate-950/50 p-3.5 sm:p-4 rounded-2xl border border-slate-800/80">
-                    <div className="flex items-center gap-1.5 text-xs font-semibold text-indigo-400 border-b border-slate-800 pb-2">
+                    <div className="flex items-center gap-1.5 text-xs font-semibold text-brand-blue-light border-b border-slate-800 pb-2">
                       <Store className="w-3.5 h-3.5" />
                       <span>{vendorName}</span>
                     </div>
@@ -123,7 +123,7 @@ export default function CartDrawer() {
                             <h4 className="text-xs font-semibold text-slate-200 truncate">
                               {product.title}
                             </h4>
-                            <p className="text-xs text-indigo-300 font-extrabold mt-0.5">
+                            <p className="text-xs text-brand-orange-light font-extrabold mt-0.5">
                               {formatINR(product.price)}
                             </p>
 
@@ -175,19 +175,19 @@ export default function CartDrawer() {
                   </div>
                   <div className="flex justify-between text-slate-300">
                     <span>Shipping Fee</span>
-                    <span className="text-emerald-400 font-semibold flex items-center gap-1">
+                    <span className="text-brand-blue-light font-semibold flex items-center gap-1">
                       <Truck className="w-3.5 h-3.5" /> Free Express Delivery
                     </span>
                   </div>
                   <div className="flex justify-between border-t border-slate-800 pt-2 text-sm font-extrabold text-white">
                     <span>Total Amount</span>
-                    <span className="text-indigo-400 text-base">{formatINR(totalPrice)}</span>
+                    <span className="text-brand-orange font-extrabold text-base">{formatINR(totalPrice)}</span>
                   </div>
                 </div>
 
                 <button
                   onClick={handleCheckout}
-                  className="w-full min-h-[48px] flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 active:scale-[0.98] text-white font-bold text-sm shadow-glow transition-all"
+                  className="w-full min-h-[48px] flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-brand-gradient hover:opacity-90 active:scale-[0.98] text-white font-bold text-sm shadow-glow transition-all"
                 >
                   <Lock className="w-4 h-4" />
                   <span>Proceed to Secure Checkout</span>

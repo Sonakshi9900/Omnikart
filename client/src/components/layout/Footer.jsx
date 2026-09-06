@@ -16,12 +16,12 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#04060d] text-slate-300 border-t border-slate-800/80 pt-12 pb-8 px-4 lg:px-8 mt-20">
+    <footer className="bg-[#070C1E] text-slate-300 border-t border-slate-800/80 pt-12 pb-8 px-4 lg:px-8 mt-20">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* a) Trust Badges Bar */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6 rounded-3xl glass-panel bg-slate-900/40 border border-slate-800/80">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6 rounded-3xl glass-panel bg-card/60 border border-slate-800/80">
           <div className="flex items-center gap-3.5">
-            <div className="p-3 rounded-2xl bg-indigo-950/60 text-indigo-400 border border-indigo-900/40">
+            <div className="p-3 rounded-2xl bg-brand-blue/20 text-brand-blue-light border border-brand-blue/30">
               <Truck className="w-5 h-5" />
             </div>
             <div>
@@ -31,7 +31,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-3.5">
-            <div className="p-3 rounded-2xl bg-purple-950/60 text-purple-400 border border-purple-900/40">
+            <div className="p-3 rounded-2xl bg-brand-orange/20 text-brand-orange-light border border-brand-orange/30">
               <Layers className="w-5 h-5" />
             </div>
             <div>
@@ -41,7 +41,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-3.5">
-            <div className="p-3 rounded-2xl bg-cyan-950/60 text-cyan-400 border border-cyan-900/40">
+            <div className="p-3 rounded-2xl bg-brand-blue/20 text-brand-blue-light border border-brand-blue/30">
               <Headphones className="w-5 h-5" />
             </div>
             <div>
@@ -51,7 +51,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-3.5">
-            <div className="p-3 rounded-2xl bg-emerald-950/60 text-emerald-400 border border-emerald-900/40">
+            <div className="p-3 rounded-2xl bg-brand-orange/20 text-brand-orange-light border border-brand-orange/30">
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
@@ -83,12 +83,12 @@ export default function Footer() {
                   placeholder="Enter your email for deals..."
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-slate-900/80 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-xs text-slate-200 focus:outline-none focus:border-indigo-500"
+                  className="w-full bg-slate-900/80 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-xs text-slate-200 focus:outline-none focus:border-brand-blue"
                 />
               </div>
               <button
                 type="submit"
-                className="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs shadow-glow transition-all flex items-center gap-1.5 shrink-0"
+                className="px-4 py-2.5 rounded-xl bg-brand-blue hover:bg-brand-blue-light text-white font-semibold text-xs shadow-glow transition-all flex items-center gap-1.5 shrink-0"
               >
                 <span>Subscribe</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -99,7 +99,7 @@ export default function Footer() {
           {/* c) 4-Column Structured Links */}
           <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-6 text-xs">
             <div className="space-y-3">
-              <h5 className="font-bold text-white uppercase tracking-wider text-[11px] text-indigo-400">
+              <h5 className="font-bold uppercase tracking-wider text-[11px] text-brand-blue-light">
                 Categories
               </h5>
               <ul className="space-y-2 text-slate-400">
@@ -112,7 +112,7 @@ export default function Footer() {
             </div>
 
             <div className="space-y-3">
-              <h5 className="font-bold text-white uppercase tracking-wider text-[11px] text-indigo-400">
+              <h5 className="font-bold uppercase tracking-wider text-[11px] text-brand-blue-light">
                 Customer Support
               </h5>
               <ul className="space-y-2 text-slate-400">
@@ -125,7 +125,7 @@ export default function Footer() {
             </div>
 
             <div className="space-y-3">
-              <h5 className="font-bold text-white uppercase tracking-wider text-[11px] text-indigo-400">
+              <h5 className="font-bold uppercase tracking-wider text-[11px] text-brand-blue-light">
                 Vendor Hub
               </h5>
               <ul className="space-y-2 text-slate-400">
@@ -138,7 +138,7 @@ export default function Footer() {
             </div>
 
             <div className="space-y-3">
-              <h5 className="font-bold text-white uppercase tracking-wider text-[11px] text-indigo-400">
+              <h5 className="font-bold uppercase tracking-wider text-[11px] text-brand-blue-light">
                 Company
               </h5>
               <ul className="space-y-2 text-slate-400">
@@ -158,20 +158,20 @@ export default function Footer() {
 
           {/* Social Icons */}
           <div className="flex items-center gap-4 text-slate-400">
-            <a href="#" className="hover:text-indigo-400 transition-colors"><Twitter className="w-4 h-4" /></a>
-            <a href="#" className="hover:text-indigo-400 transition-colors"><Github className="w-4 h-4" /></a>
-            <a href="#" className="hover:text-indigo-400 transition-colors"><Linkedin className="w-4 h-4" /></a>
-            <a href="#" className="hover:text-indigo-400 transition-colors"><Instagram className="w-4 h-4" /></a>
+            <a href="#" className="hover:text-brand-blue-light transition-colors"><Twitter className="w-4 h-4" /></a>
+            <a href="#" className="hover:text-brand-blue-light transition-colors"><Github className="w-4 h-4" /></a>
+            <a href="#" className="hover:text-brand-blue-light transition-colors"><Linkedin className="w-4 h-4" /></a>
+            <a href="#" className="hover:text-brand-blue-light transition-colors"><Instagram className="w-4 h-4" /></a>
           </div>
 
           {/* Indian Payment Badges */}
           <div className="flex items-center gap-2 flex-wrap justify-center">
             <span className="text-[10px] text-slate-500 uppercase tracking-wider font-semibold mr-1">Accepted Payments:</span>
-            <span className="px-2 py-1 rounded bg-slate-900 border border-slate-800 text-[10px] font-bold text-indigo-300">UPI</span>
-            <span className="px-2 py-1 rounded bg-slate-900 border border-slate-800 text-[10px] font-bold text-emerald-400">RuPay</span>
-            <span className="px-2 py-1 rounded bg-slate-900 border border-slate-800 text-[10px] font-bold text-cyan-400">Paytm</span>
-            <span className="px-2 py-1 rounded bg-slate-900 border border-slate-800 text-[10px] font-bold text-purple-400">PhonePe</span>
-            <span className="px-2 py-1 rounded bg-slate-900 border border-slate-800 text-[10px] font-bold text-amber-400">NetBanking</span>
+            <span className="px-2 py-1 rounded bg-slate-900 border border-slate-800 text-[10px] font-bold text-brand-blue-light">UPI</span>
+            <span className="px-2 py-1 rounded bg-slate-900 border border-slate-800 text-[10px] font-bold text-brand-orange-light">RuPay</span>
+            <span className="px-2 py-1 rounded bg-slate-900 border border-slate-800 text-[10px] font-bold text-brand-blue-light">Paytm</span>
+            <span className="px-2 py-1 rounded bg-slate-900 border border-slate-800 text-[10px] font-bold text-brand-orange-light">PhonePe</span>
+            <span className="px-2 py-1 rounded bg-slate-900 border border-slate-800 text-[10px] font-bold text-brand-blue-light">NetBanking</span>
             <span className="px-2 py-1 rounded bg-slate-900 border border-slate-800 text-[10px] font-bold text-slate-300">VISA</span>
             <span className="px-2 py-1 rounded bg-slate-900 border border-slate-800 text-[10px] font-bold text-slate-300">Mastercard</span>
           </div>

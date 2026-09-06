@@ -5,23 +5,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#070b14',
-        surface: '#0b1120',
-        card: '#0f172a',
-        primary: {
-          50: '#f0fdfa',
-          100: '#ccfbf1',
-          500: '#14b8a6',
-          600: '#0d9488',
-          700: '#0f766e',
-          900: '#134e4a',
+        background: '#0B1330',      // deep navy, matches cart outline / "Omni" text in logo
+        surface: '#101B3D',
+        card: '#16214A',
+        brand: {
+          blue: {
+            light: '#2F8CFF',        // top of the "O" wheel gradient in logo
+            DEFAULT: '#1D63E0',
+            dark: '#0B3FA0',         // bottom of the "O" wheel gradient in logo
+          },
+          orange: {
+            light: '#FFB020',        // top of "Kart" text gradient in logo
+            DEFAULT: '#FF8A00',
+            dark: '#FF6A00',         // bottom of "Kart" text gradient in logo
+          },
         },
-        accent: {
-          teal: '#14b8a6',
-          amber: '#f59e0b',
-          terracotta: '#ea580c',
-          emerald: '#10b981',
-          rose: '#f43f5e',
+        neutral: {
+          offwhite: '#F7F8FA',
         },
       },
       fontFamily: {
@@ -29,8 +29,9 @@ export default {
         heading: ['"Space Grotesk"', 'sans-serif'],
       },
       boxShadow: {
-        glow: '0 0 25px -5px rgba(20, 184, 166, 0.35)',
-        'glow-amber': '0 0 25px -5px rgba(245, 158, 11, 0.35)',
+        glow: '0 0 25px -5px rgba(29, 99, 224, 0.35)',
+        'glow-amber': '0 0 25px -5px rgba(255, 138, 0, 0.35)',
+        'glow-orange': '0 0 25px -5px rgba(255, 138, 0, 0.35)',
       },
     },
   },

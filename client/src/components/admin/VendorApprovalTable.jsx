@@ -51,7 +51,7 @@ export default function VendorApprovalTable({ vendors, onVendorUpdated, onEditCo
       <div className="flex items-center justify-between border-b border-slate-800 pb-4">
         <div>
           <h3 className="font-bold text-slate-100 flex items-center gap-2">
-            <ShieldCheck className="w-5 h-5 text-indigo-400" />
+            <ShieldCheck className="w-5 h-5 text-brand-blue-light" />
             <span>Vendor Onboarding & Approval Queue</span>
           </h3>
           <p className="text-xs text-slate-400">
@@ -76,7 +76,7 @@ export default function VendorApprovalTable({ vendors, onVendorUpdated, onEditCo
               <tr key={vendor._id} className="hover:bg-slate-900/40 transition-colors">
                 <td className="p-3.5">
                   <div className="flex items-center gap-2.5">
-                    <div className="p-2 rounded-xl bg-indigo-950/50 border border-indigo-800/50 text-indigo-400">
+                    <div className="p-2 rounded-xl bg-brand-blue/20 border border-brand-blue/30 text-brand-blue-light">
                       <Store className="w-4 h-4" />
                     </div>
                     <div>
@@ -88,12 +88,12 @@ export default function VendorApprovalTable({ vendors, onVendorUpdated, onEditCo
 
                 <td className="p-3.5">
                   {vendor.isApproved ? (
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase bg-emerald-950 text-emerald-400 border border-emerald-800">
+                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase bg-brand-blue/20 text-brand-blue-light border border-brand-blue/40">
                       <CheckCircle2 className="w-3 h-3" />
                       Approved
                     </span>
                   ) : (
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase bg-amber-950 text-amber-400 border border-amber-800">
+                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase bg-brand-orange/20 text-brand-orange-light border border-brand-orange/40">
                       <XCircle className="w-3 h-3" />
                       Pending Approval
                     </span>
@@ -103,7 +103,7 @@ export default function VendorApprovalTable({ vendors, onVendorUpdated, onEditCo
                 <td className="p-3.5">
                   <button
                     onClick={() => onEditCommission(vendor)}
-                    className="flex items-center gap-1 font-bold text-indigo-300 hover:text-indigo-400 bg-indigo-950/40 px-2.5 py-1 rounded-lg border border-indigo-900/60 transition-all"
+                    className="flex items-center gap-1 font-bold text-brand-blue-light hover:text-brand-blue bg-brand-blue/20 px-2.5 py-1 rounded-lg border border-brand-blue/30 transition-all"
                   >
                     <Percent className="w-3 h-3" />
                     <span>{vendor.commissionRate || 10.0}%</span>
@@ -120,7 +120,7 @@ export default function VendorApprovalTable({ vendors, onVendorUpdated, onEditCo
                     className={`px-3 py-1.5 rounded-xl font-semibold text-xs transition-all ${
                       vendor.isApproved
                         ? 'bg-rose-950/80 hover:bg-rose-900 text-rose-300 border border-rose-800'
-                        : 'bg-emerald-600 hover:bg-emerald-500 text-white shadow-glow'
+                        : 'bg-brand-blue hover:bg-brand-blue-light text-white shadow-glow'
                     }`}
                   >
                     {vendor.isApproved ? 'Revoke Access' : 'Approve Vendor'}
