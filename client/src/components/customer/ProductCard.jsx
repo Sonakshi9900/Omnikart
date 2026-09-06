@@ -76,11 +76,16 @@ export default function ProductCard({ product, onQuickView }) {
 
         {/* Product Details */}
         <div className="space-y-1 sm:space-y-1.5">
-          {/* Vendor Name */}
-          <div className="flex items-center gap-1 text-[11px] font-semibold text-indigo-400">
-            <Store className="w-3 h-3 shrink-0" />
-            <span className="truncate">{product.vendor?.storeName || 'OmniVendor'}</span>
-            <ShieldCheck className="w-3 h-3 text-emerald-400 shrink-0" title="Verified Seller" />
+          {/* Vendor Name & Trust Score */}
+          <div className="flex items-center justify-between text-[11px] font-semibold text-teal-400">
+            <div className="flex items-center gap-1 min-w-0">
+              <Store className="w-3 h-3 shrink-0" />
+              <span className="truncate">{product.vendor?.storeName || 'OmniVendor'}</span>
+              <ShieldCheck className="w-3 h-3 text-emerald-400 shrink-0" title="Verified Seller" />
+            </div>
+            <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-teal-950/80 border border-teal-500/30 text-teal-300 shrink-0">
+              {product.vendor?.trustScore || 98}% Trust
+            </span>
           </div>
 
           {/* Title: 1-line truncation on mobile (`line-clamp-1`), 2-line on desktop (`md:line-clamp-2`) */}

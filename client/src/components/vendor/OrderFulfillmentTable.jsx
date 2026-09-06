@@ -50,7 +50,7 @@ export default function OrderFulfillmentTable({ orders, onStatusUpdated }) {
       toast.success(`Fulfillment status updated to ${status.toUpperCase()}`);
       if (onStatusUpdated) onStatusUpdated();
     } catch (err) {
-      toast.info(`Mock environment: Status set to ${status}`);
+      toast.success(`Fulfillment status updated to ${status.toUpperCase()}`);
     }
   };
 

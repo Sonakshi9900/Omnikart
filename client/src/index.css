@@ -4,21 +4,26 @@
 
 @layer base {
   body {
-    background-color: #090D16;
+    background-color: #070b14;
     color: #f8fafc;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Space Grotesk', sans-serif;
   }
 }
 
-/* Modern Glassmorphism Styling */
+/* Modern Glassmorphism & Pattern Styling */
 .glass-panel {
-  background: rgba(17, 23, 38, 0.75);
+  background: rgba(11, 17, 32, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-header {
-  background: rgba(9, 13, 22, 0.85);
+  background: rgba(7, 11, 20, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
@@ -30,8 +35,14 @@
 
 .glass-card-hover:hover {
   transform: translateY(-3px);
-  border-color: rgba(99, 102, 241, 0.4);
-  box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.25);
+  border-color: rgba(20, 184, 166, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(20, 184, 166, 0.25);
+}
+
+/* Non-templated Geometric Dot-Grid Background Pattern */
+.bg-grid-pattern {
+  background-image: radial-gradient(rgba(20, 184, 166, 0.15) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
 /* Custom Scrollbar */
@@ -41,16 +52,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #090D16;
+  background: #070b14;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1f293d;
+  background: #1e293b;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #374151;
+  background: #0d9488;
 }
 
 /* Skeleton Loading Shimmer */
@@ -64,7 +75,7 @@
 }
 
 .skeleton-shimmer {
-  background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.03) 75%);
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(20,184,166,0.08) 50%, rgba(255,255,255,0.03) 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }

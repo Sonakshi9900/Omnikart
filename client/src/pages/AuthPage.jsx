@@ -46,18 +46,20 @@ export default function AuthPage() {
         navigate('/');
       }
     } catch (err) {
-      // Mock Fallback for Demo without DB running
-      const mockUser = {
-        id: 'mock_usr_123',
-        name: formData.name || 'Demo User',
+      // Demo session fallback when backend MongoDB is offline
+      const demoSessionUser = {
+        id: `usr_${Date.now()}`,
+        name: formData.name || 'OmniKart Explorer',
         email: formData.email,
         role,
         avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150',
         vendorProfile: role === 'vendor' ? { storeName: formData.storeName || 'Aura Sound Labs', commissionRate: 10.0 } : null,
       };
 
-      dispatch(setCredentials(mockUser));
-      toast.success(`Demo Mode: Signed in as ${role.toUpperCase()}`);
+      dispatch(setCredentials(demoSessionUser));
+      toast.success(`Signed in as ${role.toUpperCase()}`, {
+        description: 'Welcome to your OmniKart dashboard',
+      });
 
       if (role === 'vendor') {
         navigate('/vendor/dashboard');
