@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
-import logoImg from '../../assets/omnikart-logo.jpg';
+import logoImg from '../../assets/omnikart-logo.png';
 
 export default function SplashScreen({ onComplete }) {
   const [isVisible, setIsVisible] = useState(true);
@@ -40,13 +40,11 @@ export default function SplashScreen({ onComplete }) {
           >
             {/* Branding Logo Glow */}
             <div className="relative">
-              <div className="p-1 rounded-2xl bg-brand-gradient shadow-glow animate-pulse">
-                <img
-                  src={logoImg}
-                  alt="OmniKart Logo"
-                  className="h-20 w-auto object-contain rounded-xl bg-background p-1"
-                />
-              </div>
+              <img
+                src={logoImg}
+                alt="OmniKart Logo"
+                className="h-20 w-auto object-contain"
+              />
             </div>
 
             {/* Typography */}

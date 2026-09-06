@@ -4,7 +4,7 @@ import BottomNavBar from './BottomNavBar';
 import Footer from './Footer';
 import CartDrawer from '../customer/CartDrawer';
 import PageTransition from './PageTransition';
-import logoImg from '../../assets/omnikart-logo.jpg';
+import logoImg from '../../assets/omnikart-logo.png';
 import { Search, ShoppingBag, User } from 'lucide-react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCartTotalCount, toggleCartSheet } from '../../store/cartSlice';
@@ -31,7 +31,7 @@ export default function MainLayout({ children, searchQuery, setSearchQuery, onOp
             <img
               src={logoImg}
               alt="OmniKart Logo"
-              className="h-9 w-auto object-contain rounded-lg shadow-glow"
+              className="h-9 w-auto object-contain"
             />
           </Link>
 

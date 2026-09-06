@@ -21,7 +21,7 @@ import { selectCurrentUser, logoutUser } from '../../store/authSlice';
 import { useNavigate, Link } from 'react-router-dom';
 import API from '../../services/api';
 import { toast } from 'sonner';
-import logoImg from '../../assets/omnikart-logo.jpg';
+import logoImg from '../../assets/omnikart-logo.png';
 
 const MEGA_MENU_DATA = {
   Electronics: {
@@ -91,7 +91,7 @@ export default function Navbar({ searchQuery, setSearchQuery }) {
           <img
             src={logoImg}
             alt="OmniKart Logo"
-            className="h-11 w-auto object-contain rounded-xl shadow-glow group-hover:scale-105 transition-transform"
+            className="h-11 w-auto object-contain group-hover:scale-105 transition-transform"
           />
         </Link>
 

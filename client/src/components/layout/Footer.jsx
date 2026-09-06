@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Truck, Layers, Headphones, ShieldCheck, Mail, ArrowRight, Sparkles, Github, Twitter, Linkedin, Instagram } from 'lucide-react';
 import { toast } from 'sonner';
-import logoImg from '../../assets/omnikart-logo.jpg';
+import logoImg from '../../assets/omnikart-logo.png';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -68,7 +68,7 @@ export default function Footer() {
               <img
                 src={logoImg}
                 alt="OmniKart Logo"
-                className="h-10 w-auto object-contain rounded-xl shadow-glow"
+                className="h-10 w-auto object-contain"
               />
             </div>
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
