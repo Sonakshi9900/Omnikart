@@ -53,12 +53,12 @@ export default function BottomNavBar({ onOpenCategories }) {
           <span className="text-slate-300">Cart</span>
         </button>
 
-        {/* Profile / Auth */}
+        {/* Profile / Account */}
         <Link
-          to={user ? (user.role === 'vendor' ? '/vendor/dashboard' : user.role === 'admin' ? '/admin/dashboard' : '/auth') : '/auth'}
+          to={user ? '/account' : '/auth'}
           className={`flex flex-col items-center justify-center min-h-[44px] min-w-[44px] text-xs font-semibold transition-colors active:scale-95 ${
-            isActive('/auth') || isActive('/vendor/dashboard') || isActive('/admin/dashboard')
-              ? 'text-indigo-400 font-bold'
+            isActive('/account') || isActive('/auth') || isActive('/vendor/dashboard') || isActive('/admin/dashboard')
+              ? 'text-teal-400 font-bold'
               : 'text-slate-400 hover:text-slate-200'
           }`}
         >
@@ -66,12 +66,12 @@ export default function BottomNavBar({ onOpenCategories }) {
             <img
               src={user.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'}
               alt={user.name}
-              className="w-5 h-5 rounded-full border border-indigo-400 object-cover mb-0.5"
+              className="w-5 h-5 rounded-full border border-teal-400 object-cover mb-0.5"
             />
           ) : (
             <User className="w-5 h-5 mb-0.5" />
           )}
-          <span>{user ? 'Account' : 'Profile'}</span>
+          <span>{user ? 'Account' : 'Sign In'}</span>
         </Link>
       </div>
     </nav>

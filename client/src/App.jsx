@@ -10,6 +10,7 @@ import VendorDashboardPage from './pages/vendor/VendorDashboardPage';
 import AdminDashboardPage from './pages/admin/AdminDashboardPage';
 import CheckoutPage from './pages/customer/CheckoutPage';
 import AuthPage from './pages/AuthPage';
+import AccountPage from './pages/customer/AccountPage';
 
 const queryClient = new QueryClient();
 
@@ -23,8 +24,8 @@ export default function App() {
             theme="dark"
             toastOptions={{
               style: {
-                background: '#111726',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
+                background: '#0b1120',
+                border: '1px solid rgba(20, 184, 166, 0.2)',
                 color: '#f8fafc',
                 borderRadius: '16px',
               },
@@ -32,6 +33,7 @@ export default function App() {
           />
           <Routes>
             <Route path="/" element={<StorefrontPage />} />
+            <Route path="/account" element={<AccountPage />} />
             <Route path="/vendor/dashboard" element={<VendorDashboardPage />} />
             <Route path="/admin/dashboard" element={<AdminDashboardPage />} />
             <Route path="/checkout" element={<CheckoutPage />} />

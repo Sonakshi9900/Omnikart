@@ -10,6 +10,10 @@ import {
   ShieldCheck,
   Zap,
   ArrowRight,
+  Package,
+  MapPin,
+  Settings,
+  CreditCard,
 } from 'lucide-react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCartTotalCount, toggleCartSheet } from '../../store/cartSlice';
@@ -157,23 +161,73 @@ export default function Navbar({ searchQuery, setSearchQuery }) {
               </button>
 
               {showAccountDropdown && (
-                <div className="absolute right-0 mt-2 w-56 glass-panel bg-slate-900 border border-slate-800 rounded-2xl p-2 shadow-2xl z-50 space-y-1 text-xs">
-                  <div className="px-3 py-2 border-b border-slate-800">
-                    <p className="font-bold text-white">{user.name}</p>
+                <div className="absolute right-0 mt-2 w-64 glass-panel bg-slate-900 border border-teal-500/20 rounded-2xl p-2 shadow-2xl z-50 space-y-1 text-xs animate-in fade-in slide-in-from-top-2 duration-200">
+                  {/* Logged in User Details Header */}
+                  <div className="px-3 py-2 border-b border-slate-800 space-y-0.5">
+                    <p className="font-bold font-heading text-white">{user.name}</p>
                     <p className="text-[11px] text-slate-400 truncate">{user.email}</p>
-                    <span className="inline-block mt-1 px-2 py-0.5 rounded bg-indigo-950 text-indigo-300 font-bold uppercase text-[9px]">
+                    <span className="inline-block mt-1 px-2 py-0.5 rounded bg-teal-950 border border-teal-500/30 text-teal-300 font-bold uppercase text-[9px]">
                       {user.role}
                     </span>
                   </div>
 
+                  {/* Account Quick Links */}
+                  <div className="py-1 space-y-0.5 border-b border-slate-800">
+                    <Link
+                      to="/account?tab=orders"
+                      onClick={() => setShowAccountDropdown(false)}
+                      className="flex items-center gap-2 px-3 py-2 rounded-xl text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
+                    >
+                      <Package className="w-4 h-4 text-teal-400" />
+                      <span>My Orders</span>
+                    </Link>
+
+                    <Link
+                      to="/account?tab=wishlist"
+                      onClick={() => setShowAccountDropdown(false)}
+                      className="flex items-center gap-2 px-3 py-2 rounded-xl text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
+                    >
+                      <Heart className="w-4 h-4 text-rose-400" />
+                      <span>Wishlist</span>
+                    </Link>
+
+                    <Link
+                      to="/account?tab=addresses"
+                      onClick={() => setShowAccountDropdown(false)}
+                      className="flex items-center gap-2 px-3 py-2 rounded-xl text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
+                    >
+                      <MapPin className="w-4 h-4 text-cyan-400" />
+                      <span>Saved Addresses</span>
+                    </Link>
+
+                    <Link
+                      to="/account?tab=settings"
+                      onClick={() => setShowAccountDropdown(false)}
+                      className="flex items-center gap-2 px-3 py-2 rounded-xl text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
+                    >
+                      <Settings className="w-4 h-4 text-amber-400" />
+                      <span>Account Settings</span>
+                    </Link>
+
+                    <Link
+                      to="/account?tab=payments"
+                      onClick={() => setShowAccountDropdown(false)}
+                      className="flex items-center gap-2 px-3 py-2 rounded-xl text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
+                    >
+                      <CreditCard className="w-4 h-4 text-emerald-400" />
+                      <span>Payment Methods</span>
+                    </Link>
+                  </div>
+
+                  {/* Vendor / Admin Specific Dashboards */}
                   {user.role === 'vendor' && (
                     <Link
                       to="/vendor/dashboard"
                       onClick={() => setShowAccountDropdown(false)}
-                      className="flex items-center gap-2 px-3 py-2 rounded-xl text-slate-200 hover:bg-slate-800 transition-colors"
+                      className="flex items-center gap-2 px-3 py-2 rounded-xl text-teal-300 hover:bg-teal-950/40 font-semibold transition-colors"
                     >
-                      <Store className="w-4 h-4 text-indigo-400" />
-                      <span>Vendor SaaS Dashboard</span>
+                      <Store className="w-4 h-4 text-teal-400" />
+                      <span>Vendor Dashboard</span>
                     </Link>
                   )}
 
@@ -181,16 +235,20 @@ export default function Navbar({ searchQuery, setSearchQuery }) {
                     <Link
                       to="/admin/dashboard"
                       onClick={() => setShowAccountDropdown(false)}
-                      className="flex items-center gap-2 px-3 py-2 rounded-xl text-slate-200 hover:bg-slate-800 transition-colors"
+                      className="flex items-center gap-2 px-3 py-2 rounded-xl text-purple-300 hover:bg-purple-950/40 font-semibold transition-colors"
                     >
                       <ShieldCheck className="w-4 h-4 text-purple-400" />
                       <span>Admin Command Center</span>
                     </Link>
                   )}
 
+                  {/* Logout Button */}
                   <button
-                    onClick={handleLogout}
-                    className="w-full flex items-center gap-2 px-3 py-2 rounded-xl text-rose-400 hover:bg-rose-950/40 transition-colors text-left"
+                    onClick={() => {
+                      setShowAccountDropdown(false);
+                      handleLogout();
+                    }}
+                    className="w-full flex items-center gap-2 px-3 py-2 rounded-xl text-rose-400 hover:bg-rose-950/40 transition-colors text-left font-medium"
                   >
                     <LogOut className="w-4 h-4" />
                     <span>Sign Out</span>
